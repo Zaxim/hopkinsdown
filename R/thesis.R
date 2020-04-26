@@ -16,7 +16,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'  output: unimelbdown::thesis_pdf
+#'  output: hopkinsdown::thesis_pdf
 #' }
 #'
 #' @export
@@ -52,7 +52,7 @@ thesis_pdf <- function(toc = TRUE, toc_depth = 3, highlight = "default", ...) {
 #' @return A gitbook webpage
 #' @examples
 #' \dontrun{
-#'  output: unimelbdown::thesis_gitbook
+#'  output: hopkinsdown::thesis_gitbook
 #' }
 thesis_gitbook <- function(...){
 
@@ -84,7 +84,7 @@ thesis_gitbook <- function(...){
 #' the Reed Senior Thesis Word template
 #' @examples
 #' \dontrun{
-#'  output: unimelbdown::thesis_word
+#'  output: hopkinsdown::thesis_word
 #' }
 thesis_word <- function(...){
 
@@ -108,7 +108,7 @@ thesis_word <- function(...){
 #' @return A ebook version of the thesis
 #' @examples
 #' \dontrun{
-#'  output: unimelbdown::thesis_epub
+#'  output: hopkinsdown::thesis_epub
 #' }
 thesis_epub <- function(...){
 

@@ -18,6 +18,6 @@ to specify the creation of a epub version of the thesis.
 }
 \examples{
 \dontrun{
- output: unimelbdown::thesis_epub
+ output: hopkinsdown::thesis_epub
 }
 }

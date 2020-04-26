@@ -28,7 +28,7 @@ to specify the LaTeX template and cls files.
 }
 \examples{
 \dontrun{
- output: unimelbdown::thesis_pdf
+ output: hopkinsdown::thesis_pdf
 }
 
 }
