@@ -1,23 +1,20 @@
-# unimelbdown
+# hopkinsdown
 
-This package provides a template for writing a thesis at the University of
-Melbourne using **rmarkdown** and **bookdown**. This project is based on Chester 
-Ismay's [thesisdown](https://github.com/ismayc/thesisdown). 
+This package provides a template for writing a thesis at Johns Hopkins University using **rmarkdown** and **bookdown**. This project is based on Luke Zappia's [unimelbdown](https://github.com/lazappi/unimelbdown) which is in turn based on Chester 
+Ismay's [thesisdown](https://github.com/ismayc/thesisdown).
 
-Currently, the PDF and gitbook versions are fully-functional. There is also a
-Word template which is complete enough for proofing/editing but not for
-producing a final document.
+Currently none of the output formats are compliant or work correctly.
 
-The Latex template is adapted from John Papandriopoulos
-[PhD Thesis Template](https://github.com/jpap/phd-thesis-template).
+The Latex template is adapted from John "Randy" Clayton's
+[JHU Dissertation LaTeX mwe](https://github.com/jrclayton/jhu-dissertation-mwe).
 
 ## Installation
 
-You can install **unimelbdown** from GitHub using **devtools**:
+You can install **hopkinsdown** from GitHub using **devtools**:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("lazappi/unimelbdown")
+devtools::install_github("Zaxim/hopkinsdown")
 ```
 
 You will also need to install LaTeX. The easiest way to do that is using the
@@ -30,11 +27,11 @@ tinytex::install_tinytex()
 tinytex:::is_tinytex()
 ```
 
-## Using unimelbdown
+## Using hopkinsdown
 
-To use **unimelbdown** from RStudio:
+To use **hopkinsdown** from RStudio:
 
-1) Use the **New R Markdown** dialog to select **Unimelb Thesis** and enter 
+1) Use the **New R Markdown** dialog to select **Hopkinsdown Thesis** and enter 
    `index` as the name:
 
     ![New R Markdown](thesis_rmd.png)
@@ -43,7 +40,7 @@ To use **unimelbdown** from RStudio:
     at this step.
 
 > If you are not using RStudio run this line to create a template:
-> `rmarkdown::draft('index.Rmd', template = 'unimelbthesis', package = 'unimelbdown', create_dir = TRUE)`
+> `rmarkdown::draft('index.Rmd', template = 'hopkinsdown', package = 'hopkinsdown', create_dir = TRUE)`
 
 2) Edit the YAML header in the `index.Rmd` file to set option.
 
@@ -54,4 +51,4 @@ To use **unimelbdown** from RStudio:
    format.
 
 > Use the following line if not in RStudio
-> `bookdown::render_book('index.Rmd', unimelbdown::thesis_pdf(latex_engine = 'xelatex'))`
+> `bookdown::render_book('index.Rmd', hopkinsdown::thesis_pdf(latex_engine = 'xelatex'))`
