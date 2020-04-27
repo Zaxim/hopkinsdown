@@ -43,8 +43,6 @@
 \usepackage{hyperref}  % Hyperlinks
 \usepackage{setspace}  % Line spacing
 \usepackage{chemarr}   % Improved reaction arrows for chemists
-\usepackage{palatino}  % Use the palatino font family
-\usepackage{mathpazo}  % Use the palotino font family
 
 % +-----Parameters-------------------------------------------------------------+
 %  Set parameters for the document. To convert from YAML to LaTeX we need to add
@@ -94,12 +92,12 @@ $if(abstract)$
   \end{abstract}
 $endif$
 
-% +-----Declaration------------------------------------------------------------+
+% +-----Readers-----------------------------------------------------------------+
 
-$if(declaration)$
-  \begin{declaration}
-    $declaration$
-  \end{declaration}
+$if(readers)$
+  \begin{readers}
+    $readers$
+  \end{readers}
 $endif$
 
 % +-----Preface----------------------------------------------------------------+

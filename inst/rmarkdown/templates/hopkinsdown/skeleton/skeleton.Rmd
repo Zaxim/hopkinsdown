@@ -1,11 +1,10 @@
 ---
 # *============================================================================*
-#                UNIVERSITY OF MELBOURNE RMARKDOWN THESIS
+#                JOHNS HOPKINS RMARKDOWN THESIS
 # *============================================================================*
 
 # +----------------------------------------------------------------------------+
-#  This bookdown template can be used to create a thesis for the University of
-#  Melbourne.
+#  This bookdown template can be used to create a thesis for Johns Hopkins University.
 #  
 #  This document defines all the metadata associated with the thesis in a YAML
 #  (YAML Ain't Markup Language) header. Your text should be placed in other 
@@ -19,6 +18,8 @@
 #
 #  2018-10-11 (Luke Zappia)
 #    * Create first draft RMarkdown template file
+#  2020-04-26 (Zak Dehlawi)
+#    * Modified for JHU Thesis requirements 
 # +----------------------------------------------------------------------------+
 
 # *============================================================================*
@@ -31,10 +32,20 @@ title: "My Thesis"
 
 # +-----Author-----------------------------------------------------------------+
 author: "Your R. Name"
-orcid: "0000-0001-0000-0000"
+orcid: "0000-0001-0000-0000" #Remove later
 
 # +-----Degree-----------------------------------------------------------------+
 degree: "Doctor of Philosophy"
+
+# +-----Statement--------------------------------------------------------------+
+#  The statement placed on the title page. If submitting a Master's thesis 
+#  modify to: A thesis submitted to Johns Hopkins University in conformity with
+#  the requirements for the degree of [your Master's degree]
+# +----------------------------------------------------------------------------+
+
+statement: |
+  A dissertation submitted to Johns Hopkins University in conformity with the 
+  requirements for the degree of Doctor of Philosophy
 
 # +-----Submission date--------------------------------------------------------+
 #  By default these are set based on when the document is built but that they
@@ -51,14 +62,7 @@ submissionyear: "`r format(Sys.Date(), '%Y')`"
 # +----------------------------------------------------------------------------+
 
 department: "Department of Studies"
-university: "The University of Melbourne"
-
-# +-----Statement--------------------------------------------------------------+
-
-statement: |
-  A statement of whether the thesis is being submitted in partial or total
-  fulfilment of the degree, and whether the degree is being completed under a
-  jointly awarded degree.
+university: "Johns Hopkins University"
 
 # *============================================================================*
 #  FRONT MATTER
@@ -73,22 +77,22 @@ statement: |
 # +-----Abstract---------------------------------------------------------------+
 
 abstract: |
-  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-01-abstract.Rmd"), collapse = "\n  "), "a")`
+  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-01-abstract.Rmd"), collapse = "\n  "), "&#8203;")`
 
 # +-----Declaration------------------------------------------------------------+
 
-declaration: |
-  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-02-declaration.Rmd"), collapse = "\n  "), "a")`
+readers: |
+  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-02-readers.Rmd"), collapse = "\n  "), "&#8203;")`
 
 # +-----Preface----------------------------------------------------------------+
 
 preface: |
-  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-03-preface.Rmd"), collapse = "\n  "), "a")`
+  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-03-preface.Rmd"), collapse = "\n  "), "&#8203;")`
 
 # +-----Acknowledgements-------------------------------------------------------+
 
 acknowledgements: |
-  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-04-acknowledge.Rmd"), collapse = "\n  "), "a")`
+  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-04-acknowledge.Rmd"), collapse = "\n  "), "&#8203;")`
 
 # +-----List of tables---------------------------------------------------------+
 #  Should only be included if you have at least 10 tables
@@ -109,7 +113,7 @@ lof: true
 # +----------------------------------------------------------------------------+
 
 copyrightlist: |
-  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-05-copyrightlist.Rmd"), collapse = "\n  "), "a")`
+  `r ifelse(knitr:::is_latex_output(), paste(readLines("00_frontmatter/00-05-copyrightlist.Rmd"), collapse = "\n  "), "&#8203;")`
 
 # *============================================================================*
 #  CITATIONS
@@ -140,16 +144,17 @@ csl: "style/apa.csl"
 knit: "bookdown::render_book"
 site: "bookdown::bookdown_site"
 output: 
-    hopkinsdown::thesis_pdf:
-        template: "style/template.tex"
-        toc: true
-        toc_depth: 3
-    # hopkinsdown::thesis_gitbook: default
-    # hopkinsdown::thesis_word:
-    #     reference_docx: "style/template.docx"
+    # hopkinsdown::thesis_pdf:
+    #     template: "style/template.tex"
     #     toc: true
     #     toc_depth: 3
-    #     fig_caption: true
+    #     latex_engine: xelatex
+    # hopkinsdown::thesis_gitbook: default
+    hopkinsdown::thesis_word:
+        reference_docx: "style/template.docx"
+        toc: true
+        toc_depth: 3
+        fig_caption: true
     # hopkinsdown::thesis_epub: default
 ---
 
@@ -170,7 +175,6 @@ knitr::opts_chunk$set(
   message   = FALSE,
   error     = FALSE,
   cache     = FALSE,
-  fig.ext   = "png",
   fig.path  = "figure/",
   fig.align = "center",
   out.width = "80%"

@@ -291,6 +291,16 @@
 	\vfill\null
 }
 
+% +-----Readers----------------------------------------------------------------+
+
+\newenvironment{readers}{
+	\setlength{\parindent}{0pt}
+	\setlength{\parskip}{1em}
+	\vfill
+	\section*{Thesis Readers}
+}{
+}
+
 % +-----Declaration------------------------------------------------------------+
 
 \newenvironment{declaration}{

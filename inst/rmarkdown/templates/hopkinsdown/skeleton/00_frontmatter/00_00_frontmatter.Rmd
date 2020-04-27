@@ -18,26 +18,26 @@ if (!knitr:::is_latex_output()) {
 ```
 
 `r if (html) '## Abstract {-}'`
-`r if (docx) '######### Abstract {-}'`
+`r if (docx) '## Abstract {-}'`
 
 `r if (!tex) paste(readLines("00_frontmatter/00-01-abstract.Rmd"), collapse = "\n  ")`
 
-`r if (html) '## Declaration {-}'`
-`r if (docx) '######### Declaration {-}'`
+`r if (html) '### Thesis Readers {-}'`
+`r if (docx) '### Thesis Readers {-}'`
 
-`r if (!tex) paste(readLines("00_frontmatter/00-02-declaration.Rmd"), collapse = "\n  ")`
+`r if (!tex) paste(readLines("00_frontmatter/00-02-readers.Rmd"), collapse = "\n  ")`
 
 `r if (html) '## Preface {-}'`
-`r if (docx) '######### Preface {-}'`
+`r if (docx) '## Preface {-}'`
 
 `r if (!tex) paste(readLines("00_frontmatter/00-03-preface.Rmd"), collapse = "\n  ")`
 
 `r if (html) '## Acknowledgements {-}'`
-`r if (docx) '######### Acknowledgements {-}'`
+`r if (docx) '## Acknowledgements {-}'`
 
 `r if (!tex) paste(readLines("00_frontmatter/00-04-acknowledge.Rmd"), collapse = "\n  ")`
 
 `r if (html) '## List of copyright {-}'`
-`r if (docx) '######### List of copyright {-}'`
+`r if (docx) '## List of copyright {-}'`
 
 `r if (!tex) paste(readLines("00_frontmatter/00-05-copyrightlist.Rmd"), collapse = "\n  ")`
